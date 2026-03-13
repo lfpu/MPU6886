@@ -1,3 +1,12 @@
+# MPU6886
+
+## Features
+## Supported platforms
+## Installation (PlatformIO)
+## Example
+
+
+
 # MPU6886 — 获取与设置传感器数据
 
 本仓库提供对 MPU6886（3 轴加速度 + 3 轴陀螺 + 温度）的寄存器级读取与简单换算示例，基于 I2C 通信。适用于 Arduino / PlatformIO 等常见开发环境。

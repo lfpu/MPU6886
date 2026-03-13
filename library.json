@@ -2,7 +2,7 @@
   "name": "MPU6886",
   "version": "1.0.0",
   "keywords": ["MPU6886", "i2c", "example"],
-  "description": "A short description of MyAwesomeLib.",
+  "description": "A library to get IMU MPU6886 data",
   "repository": {
     "type": "git",
     "url": "https://github.com/lfpu/MPU6886.git"
@@ -15,6 +15,6 @@
     }
   ],
   "license": "MIT",
-  "frameworks": ["arduino", "mbed"],
+  "frameworks": ["arduino"],
   "platforms": ["espressif32"]
 }
