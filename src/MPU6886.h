@@ -37,4 +37,5 @@ public:
     bool readRegs(uint8_t reg, uint8_t *buf, size_t len);
     bool readReg(uint8_t reg, uint8_t &value);
     int16_t makeInt16(uint8_t highByte, uint8_t lowByte);
+    bool getDatas(float* ax, float* ay, float* az,float* gx,float* gy,float* gz,float* t);
 };

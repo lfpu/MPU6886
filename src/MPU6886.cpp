@@ -62,7 +62,38 @@ int16_t MPU6886::makeInt16(uint8_t highByte, uint8_t lowByte)
 {
     return (int16_t)((highByte << 8) | lowByte);
 }
+bool MPU6886::getDatas(float* ax, float* ay, float* az,float* gx,float* gy,float* gz,float* t){
+  uint8_t rawData[14];
 
+  // 连续读取 14 字节：Accel(6) + Temp(2) + Gyro(6)
+  if (readRegs(REG_ACCEL_XOUT_H, rawData, 14)) {
+    int16_t axRaw = makeInt16(rawData[0], rawData[1]);
+    int16_t ayRaw = makeInt16(rawData[2], rawData[3]);
+    int16_t azRaw = makeInt16(rawData[4], rawData[5]);
+
+    int16_t tempRaw = makeInt16(rawData[6], rawData[7]);
+
+    int16_t gxRaw = makeInt16(rawData[8], rawData[9]);
+    int16_t gyRaw = makeInt16(rawData[10], rawData[11]);
+    int16_t gzRaw = makeInt16(rawData[12], rawData[13]);
+
+    // 转成工程单位
+    *ax= axRaw / ACCEL_SENS;
+    *ay = ayRaw / ACCEL_SENS;
+    *az = azRaw / ACCEL_SENS;
+
+    *gx = gxRaw / GYRO_SENS;
+    *gy= gyRaw / GYRO_SENS;
+    *gz = gzRaw / GYRO_SENS;
+
+    *t = tempRaw / 326.8f + 25.0f;
+    return true;
+
+  } else {
+    Serial.println("Read sensor data failed!");
+    return false;
+  }
+}
 bool MPU6886::Init()
 {
     uint8_t who = 0;

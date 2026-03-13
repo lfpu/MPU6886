@@ -1,6 +1,6 @@
 {
   "name": "MPU6886",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "keywords": ["MPU6886", "i2c", "example"],
   "description": "A library to get IMU MPU6886 data",
   "repository": {
