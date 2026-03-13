@@ -1,0 +1,20 @@
+{
+  "name": "MPU6886",
+  "version": "1.0.0",
+  "keywords": ["MPU6886", "i2c", "example"],
+  "description": "A short description of MyAwesomeLib.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lfpu/MPU6886.git"
+  },
+  "authors": [
+    {
+      "name": "lfpu",
+      "email": "pulongfei@outlook.com",
+      "url": "https://yoursite.example"
+    }
+  ],
+  "license": "MIT",
+  "frameworks": ["arduino", "mbed"],
+  "platforms": ["espressif32"]
+}
